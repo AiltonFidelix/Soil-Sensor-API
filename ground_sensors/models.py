@@ -9,7 +9,7 @@ class GroundSensor(models.Model):
     air_humidity = models.IntegerField()
     temperature = models.FloatField()
     battery_life = models.IntegerField()
-    timestamp = models.DateField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.device
