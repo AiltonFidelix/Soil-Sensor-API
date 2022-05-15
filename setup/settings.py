@@ -79,6 +79,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -121,13 +122,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
-    'DEFAULT_PERMISSION_CLASSES':[
-        'rest_framework.permissions.IsAuthenticated',
-        'rest_framework.permissions.DjangoModelPermissions'
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES':[
-        'rest_framework.authentication.BasicAuthentication',
-    ],
+    #'DEFAULT_PERMISSION_CLASSES':[
+    #    'rest_framework.permissions.IsAuthenticated',
+    #    'rest_framework.permissions.DjangoModelPermissions'
+    #],
+    #'DEFAULT_AUTHENTICATION_CLASSES':[
+    #    'rest_framework.authentication.BasicAuthentication',
+    #],
 }
 
 CORS_ALLOWED_ORIGINS = [
