@@ -10,7 +10,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - name: docker build
       run: docker build . --file Dockerfile --tag soil-sensor-api:$(date +%s)
-      run: docker login -u DOCKER_USER -p DOCKER_PASS
-      run: docker push
+    - name: docker push
+      run: docker push soil-sensor-api:$(date +%s)
